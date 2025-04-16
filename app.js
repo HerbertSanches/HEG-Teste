@@ -127,9 +127,11 @@ mongoose
         `mongodb+srv://${dbUser}:${dbPassword}@cluster0.bludyj1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
     )
     .then(() => {
-        app.listen(3000, '0.0.0.0', () => {
-            console.log('Servidor rodando na porta 3000 acessível na rede');
-          });
+        const PORT = process.env.PORT || 3000;
+
+        app.listen(PORT, () => {
+          console.log(`Servidor rodando na porta ${PORT}`);
+        });
         console.log('Conectou ao MongoDB')
     })
     .catch((err) => console.log(err))
