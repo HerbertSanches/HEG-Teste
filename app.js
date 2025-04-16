@@ -135,3 +135,6 @@ mongoose
         console.log('Conectou ao MongoDB')
     })
     .catch((err) => console.log(err))
+
+
+module.exports = app;
